@@ -1,27 +1,31 @@
 <script setup lang="ts">
+// Importation d'une fonction de Vue permettant de créer des variables réactives
 import { ref } from 'vue';
 
 // Variable réactive pour contrôler l'état de la fenêtre
 const open = ref(true);
 
+// Définition des différents propriétés du composants pour présenter l'artiste.
 defineProps({
-  nomArtiste: String,
-  BGclip: String,
-  bio: String,
+  nomArtiste: String, // Nom de l'artiste
+  BGclip: String, // Clip en fond du composant
+  bio: String, // Biographie de l'artiste
 
-  linkSpotify: String,
-  linkDeezer: String,
-  linkSoundCloud: String,
-  linkAppleMusic: String,
-  linkYoutube: String,
+  linkSpotify: String, // Lien direct à son Spotify
+  linkDeezer: String, // Lien direct à son Deezer
+  linkSoundCloud: String, // Lien direct à son SoundCloud
+  linkAppleMusic: String, // Lien direct à son AppleMusic
+  linkYoutube: String, // Lien direct à son Youtube
 })
 </script>
 
 <template>
-            <!-- Section 1: Hero avec vidéo de fond -->
+            <!-- Section principale de la page (appelée "Hero") avec une vidéo de fond. -->
             <section class="section hero">
+              <!-- Vidéo de fond pour une ambiance visuelle immersive -->
             <video class="background-video" autoplay muted loop>
               <source src="~/assets/videos/808NOCHE-Luma.mp4" type="video/mp4" />
+              <!-- Message affiché si le navigateur de l'utilisateur ne supporte pas les vidéos -->
               Votre navigateur ne supporte pas les vidéos HTML5.
             </video>
             <!-- Fenêtre (à fermer ou ouvrir) -->
@@ -35,6 +39,7 @@ defineProps({
 </template>
 
 <style scoped>
+/* Style de la section principale. Elle occupe toute la hauteur de l'écran. */
 .hero {
   position: relative;
   display: flex;
