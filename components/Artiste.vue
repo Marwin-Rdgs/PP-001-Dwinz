@@ -3,7 +3,7 @@
 import { ref } from 'vue';
 
 // Variable réactive pour contrôler l'état de la fenêtre
-const open = ref(true);
+const open = ref(false);
 
 // Définition des différents propriétés du composants pour présenter l'artiste.
 defineProps({
@@ -24,16 +24,26 @@ defineProps({
             <section class="section hero">
               <!-- Vidéo de fond pour une ambiance visuelle immersive -->
             <video class="background-video" autoplay muted loop>
-              <source src="~/assets/videos/808NOCHE-Luma.mp4" type="video/mp4" />
+              <!-- <source :src="`../assets/videos/${BGclip}.mp4`" type="video/mp4" /> -->
+              <source src="../assets/videos/808NOCHE-Luma.mp4" type="video/mp4" />
               <!-- Message affiché si le navigateur de l'utilisateur ne supporte pas les vidéos -->
               Votre navigateur ne supporte pas les vidéos HTML5.
             </video>
             <!-- Fenêtre (à fermer ou ouvrir) -->
-             <h1 @click="open = !open">ouvrir la fenetre</h1>
-             <div
-             :class="['window',open ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0']"
-             >
-              <h2 class="text-D-secondary-pink text-center font-Primary">{{ nomArtiste }}</h2>
+             <div class="bg-D-primary-pink rounded-2xl">
+              <img @click="open = !open" src="../assets/img/chevron.svg" alt="" class="w-[32px] absolute left-0 top-[60%] transition-all ease-in-out duration-500 bg-D-primary-pink bg-opacity-80 rounded-3xl p-1" :class="[open ? 'rotate-180 ml-96 mt-20 lg:mt-0' : 'lg:rotate-0 lg:ml-0 mt-20 lg:mt-0']">
+
+              <div class="absolute left-0 top-[50%] transition-all ease-in-out duration-500 lg:w-1/4 bg-D-grey bg-opacity-35 rounded-lg p-4" :class="[open ? 'ml-0 opacity-100' : '-ml-96 opacity-0 lg:opacity-100']">
+                <h2 class="text-D-secondary-pink text-center font-Primary">{{ nomArtiste }}</h2>
+                <p class="text-D-secondary-pink text-left font-Secondary pl-2"> {{ bio }} </p>
+                <ul class="flex justify-center gap-3 mt-4">
+                  <li><a href="#"><img src="../assets/img/Spotify.svg" alt="" class="w-[30px] -translate-y-0 hover:-translate-y-3 scale-100 hover:scale-110 transition-all duration-100 ease-in-out"></a></li>
+                  <li><a href="#"><img src="../assets/img/Deezer.svg" alt="" class="w-[30px] -translate-y-0 hover:-translate-y-3 scale-100 hover:scale-110 transition-all duration-100 ease-in-out"></a></li>
+                  <li><a href="#"><img src="../assets/img/Soundcloud.svg" alt="" class="w-[30px] -translate-y-0 hover:-translate-y-3 scale-100 hover:scale-110 transition-all duration-100 ease-in-out"></a></li>
+                  <li><a href="#"><img src="../assets/img/AppleMusic.svg" alt="" class="w-[30px] -translate-y-0 hover:-translate-y-3 scale-100 hover:scale-110 transition-all duration-100 ease-in-out"></a></li>
+                  <li><a href="#"><img src="../assets/img/Youtube.svg" alt="" class="w-[30px] -translate-y-0 hover:-translate-y-3 scale-100 hover:scale-110 transition-all duration-100 ease-in-out"></a></li>
+                </ul>
+              </div>
             </div>
           </section>
 </template>
@@ -72,17 +82,5 @@ defineProps({
   justify-content: center;
   height: 100vh;
   }
-
-  /* Transition personnalisée pour Tailwind */
-.window {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  transition: all 0.5s ease-in-out;
-}
 
 </style>
