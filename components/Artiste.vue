@@ -6,7 +6,7 @@ import { ref } from 'vue';
 const open = ref(false);
 
 // Définition des différents propriétés du composants pour présenter l'artiste.
-defineProps({
+const props = defineProps({
   nomArtiste: String, // Nom de l'artiste
   BGclip: String, // Clip en fond du composant
   bio: String, // Biographie de l'artiste
@@ -24,8 +24,7 @@ defineProps({
             <section class="section hero">
               <!-- Vidéo de fond pour une ambiance visuelle immersive -->
             <video class="background-video" autoplay muted loop>
-              <!-- <source :src="`../assets/videos/${BGclip}.mp4`" type="video/mp4" /> -->
-              <source src="../assets/videos/808NOCHE-Luma.mp4" type="video/mp4" />
+              <source :src="`/videos/${BGclip}.mp4`" type="video/mp4" />
               <!-- Message affiché si le navigateur de l'utilisateur ne supporte pas les vidéos -->
               Votre navigateur ne supporte pas les vidéos HTML5.
             </video>

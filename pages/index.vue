@@ -13,7 +13,7 @@
         <Artiste 
         nomArtiste="Choki"
         bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veniam unde quo veritatis magni modi excepturi, quos ab aperiam quis vero enim asperiores temporibus voluptatum ad quas fugiat recusandae nobis."
-        BGclip="808NOCHE-Luma"/>
+        BGclip="Choki-Sur_le_dembow"/>
     
     </FullPage>
 </template>
