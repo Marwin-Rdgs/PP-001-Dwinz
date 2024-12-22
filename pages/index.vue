@@ -1,8 +1,6 @@
 <template>
   <!-- Componsant FullPageJS qui gère les sections interactives en plein écran -->
   <FullPage>
-
-
     <section class="section w-full bg-[url('/assets/img/Dwinz-Hero-BG.jpg')] bg-cover bg-center bg-opacity-5 h-screen">
       <header>
         <img src="../assets/logos/Logo-Dwinz-Long.svg" alt="" class="h-[128px] pl-[4%] pt-[2%]">
@@ -47,7 +45,7 @@
 
 
       <!-- Composant Artiste qui affiche les informations sur un artiste spécifique -->
-        <Artiste id="first"
+        <Artiste
         nomArtiste="808noche"
         bio="Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita veniam unde quo veritatis magni modi excepturi, quos ab aperiam quis vero enim asperiores temporibus voluptatum ad quas fugiat recusandae nobis."
         BGclip="808NOCHE-Luma"/>
