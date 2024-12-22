@@ -23,7 +23,7 @@ const props = defineProps({
             <!-- Section principale de la page (appelée "Hero") avec une vidéo de fond. -->
             <section class="section hero">
               <!-- Vidéo de fond pour une ambiance visuelle immersive -->
-            <video class="background-video" autoplay muted loop>
+            <video class="background-video" autoplay loop>
               <source :src="`/videos/${BGclip}.mp4`" type="video/mp4" />
               <!-- Message affiché si le navigateur de l'utilisateur ne supporte pas les vidéos -->
               Votre navigateur ne supporte pas les vidéos HTML5.
